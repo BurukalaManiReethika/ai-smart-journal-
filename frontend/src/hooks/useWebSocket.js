@@ -1,13 +1,30 @@
-import { useEffect } from "react";
+// src/hooks/useWebSocket.js
+import { useEffect, useRef } from "react";
 
-export default function useWebSocket(setMessage) {
+export default function useWebSocket(onMessage) {
+  const ws = useRef(null);
+
   useEffect(() => {
-    const ws = new WebSocket("ws://127.0.0.1:8000/ws");
+    ws.current = new WebSocket(import.meta.env.VITE_WS_URL);
 
-    ws.onmessage = (event) => {
-      setMessage(event.data);
+    ws.current.onopen = () => {
+      console.log("WebSocket connected");
     };
 
-    return () => ws.close();
+    ws.current.onmessage = (event) => {
+      onMessage(event.data);
+    };
+
+    ws.current.onerror = (err) => {
+      console.error("WebSocket error:", err);
+    };
+
+    ws.current.onclose = () => {
+      console.log("WebSocket disconnected");
+    };
+
+    return () => {
+      ws.current.close();
+    };
   }, []);
 }
