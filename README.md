@@ -58,7 +58,7 @@
 
 ---
 
-## 📁 Project Structure
+ 📁 Project Structure
 
 
 ai-smart-journal-/
@@ -82,7 +82,7 @@ ai-smart-journal-/
 └── README.md
 
 
-## ⚡ Quick Start
+⚡ Quick Start
 
 ### Prerequisites
 
