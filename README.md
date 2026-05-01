@@ -23,8 +23,8 @@
 ---
 
 ## 📸 Preview
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/a678fd87-ab86-4c58-8554-19da28864d77" />
 
-> _Screenshots / GIF demo coming soon — add yours here!_
 
 ---
 
